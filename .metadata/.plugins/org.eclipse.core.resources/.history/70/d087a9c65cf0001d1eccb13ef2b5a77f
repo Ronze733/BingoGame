@@ -1,0 +1,6 @@
+package game;
+
+public class BingoBoard {
+	private int line;
+	private int[][] board = new int[line][line];
+}

@@ -1,0 +1,80 @@
+package game;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	private int num;
+	private int line;
+
+	public Game(int num, int line) {
+		this.num = num;
+		this.line = line;
+		if (num == 1) {
+			p1 = new Player(line);
+			p2 = new Computer(line);
+		} else if (num == 2) {
+			p1 = new Player(line);
+			p2 = new Player(line);
+		}
+	}
+	
+	
+	
+	
+	public void playerTurn() {
+		System.out.print("숫자를 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		if(p1.check(select)) {
+			do {
+				System.out.print("이미 지운 숫자입니다. 다시 입력해 주세요 : ");
+				select = sc.nextInt();
+			} while (p1.check(select));
+		}
+		sc.close();
+		p1.PBB.changeBoard(select);
+		p2.PBB.changeBoard(select);
+	}
+	
+	public void comTurn() throws InterruptedException {
+		Random rand = new Random();
+		int a = rand.nextInt(this.line * this.line) + 1;
+		if(p1.check(a)) {
+			do {
+				a = rand.nextInt(this.line * this.line) + 1;
+			} while (p1.check(a));
+		}
+		p1.PBB.changeBoard(a);
+		p2.PBB.changeBoard(a);
+		System.out.print("컴퓨터가 생각하는 중");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+	}
+	
+	
+	public void doGame() {
+		boolean game = true;
+		System.out.println("1P");
+		p1.PrintBoard();
+		System.out.println("2p");
+		p2.PrintBoard();
+
+		while (game) {
+			boolean order = true;
+			if (num == 1) {
+			} else if(num == 2) {
+				
+			}
+		}
+
+	}
+
+}

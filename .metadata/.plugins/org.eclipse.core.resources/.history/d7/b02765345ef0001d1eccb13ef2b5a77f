@@ -1,0 +1,27 @@
+package game;
+
+public class BingoBoard {
+	private int line;
+	private int[][] board = new int[line][line];
+	
+	public BingoBoard() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BingoBoard(int line) {
+		super();
+		this.line = line;
+	}
+	
+	public void MakingBoard() {
+		
+	}
+	
+	public void PrintBoard() {
+		for(int i = 0; i < this.line; i++) {
+			for(int j = 0; j < this.line; j++)
+				System.out.printf("%3d", this.board[i][j]);
+			System.out.println();
+		}
+	}
+}

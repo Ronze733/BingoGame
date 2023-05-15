@@ -1,0 +1,11 @@
+package game;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	
+	public Game(int num) {
+		if(num == 1)
+			p1 = new Player();
+	}
+}

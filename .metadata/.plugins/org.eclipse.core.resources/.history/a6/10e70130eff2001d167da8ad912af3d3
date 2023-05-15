@@ -1,0 +1,64 @@
+package game;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	private int line;
+
+	public Game(int num, int line) {
+		this.line = line;
+		if (num == 1) {
+			p1 = new Player(line);
+			p2 = new Computer(line);
+		} else if (num == 2) {
+			p1 = new Player(line);
+			p2 = new Player(line);
+		}
+	}
+	
+	public Player getP1() {
+		return p1;
+	}
+	
+	public Player getP2() {
+		return p2;
+	}
+	
+	
+	public void playerTurn(int select) {
+		p1.PBB.changeBoard(select);
+		p2.PBB.changeBoard(select);
+	}
+	
+	public void comTurn() throws InterruptedException {
+		Random rand = new Random();
+		int a = rand.nextInt(this.line * this.line) + 1;
+		if(p1.check(a)) {
+			do {
+				a = rand.nextInt(this.line * this.line) + 1;
+			} while (p1.check(a));
+		}
+		p1.PBB.changeBoard(a);
+		p2.PBB.changeBoard(a);
+		System.out.print("컴퓨터가 생각하는 중");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+		System.out.print(".");
+		Thread.sleep(500);
+	}
+	
+	public boolean endRetry(int select) {
+		if(select == 1)
+			return false;
+		else
+			return true;
+ 	}
+	
+	
+}

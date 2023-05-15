@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+E:\JAVA Study\gakuen\game\.metadata\.plugins\org.eclipse.jdt.core
+460045580.index
+3629524301.index
+1865797976.index

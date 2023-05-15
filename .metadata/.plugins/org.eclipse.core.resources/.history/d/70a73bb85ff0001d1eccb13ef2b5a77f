@@ -1,0 +1,34 @@
+package game;
+
+import java.util.Random;
+
+public class BingoBoard {
+	private int line;
+	private int[][] board = new int[line][line];
+	
+	public BingoBoard() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BingoBoard(int line) {
+		super();
+		this.line = line;
+	}
+	
+	public void MakingBoard() {
+		for(int i = 0; i < this.line; i++)
+			for(int j = 0; j < this.line; j++)
+				this.board[i][j] = line * i + j + 1;
+			
+		Random rand = new Random();
+		int insert = rand.nextInt(line * line) + 1;
+	}
+	
+	public void PrintBoard() {
+		for(int i = 0; i < this.line; i++) {
+			for(int j = 0; j < this.line; j++)
+				System.out.printf("%3d", this.board[i][j]);
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,34 @@
+package game;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	private int num;
+
+	public Game(int num, int line) {
+		this.num = num;
+		if (num == 1) {
+			p1 = new Player(line);
+			p2 = new Computer(line);
+		} else if (num == 2) {
+			p1 = new Player(line);
+			p2 = new Player(line);
+		}
+	}
+
+	public void doGame() {
+		boolean game = true;
+
+		while (game) {
+			if (num == 1) {
+				System.out.println("1P");
+				p1.PrintBoard();
+				p2.PrintBoard();
+			} else if(num == 2) {
+				
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,26 @@
+package game;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("몇 줄짜리 빙고를 하시겠습니까?(4~7) : ");
+		int line = sc.nextInt();
+		Player p1 = new Player(line);
+		p1.MakingBoard();
+		
+		p1.PrintBoard();
+		
+		int select = sc.nextInt();
+		
+		p1.setSelect(select);
+		p1.PrintBoard();
+		sc.close();
+		
+		
+	}
+	
+	
+}
+

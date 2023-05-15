@@ -1,0 +1,55 @@
+package game;
+
+import java.util.Scanner;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	private int num;
+
+	public Game(int num, int line) {
+		this.num = num;
+		if (num == 1) {
+			p1 = new Player(line);
+			p2 = new Computer(line);
+		} else if (num == 2) {
+			p1 = new Player(line);
+			p2 = new Player(line);
+		}
+	}
+	
+	public void p1turn() {
+		System.out.print("숫자를 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		if(p1.check(select)) {
+			do {
+				System.out.print("이미 지운 숫자입니다. 다시 입력해 주세요 : ");
+				select = sc.nextInt();
+			} while (p1.check(select));
+		}
+		p1.PBB.changeBoard(select);
+		p2.PBB.changeBoard(select);
+		
+	}
+	
+	
+	public void doGame() {
+		boolean game = true;
+		System.out.println("1P");
+		p1.PrintBoard();
+		System.out.println("2p");
+		p2.PrintBoard();
+
+		while (game) {
+			boolean order = true;
+			if (num == 1) {
+				oneTurn(order);
+			} else if(num == 2) {
+				
+			}
+		}
+
+	}
+
+}

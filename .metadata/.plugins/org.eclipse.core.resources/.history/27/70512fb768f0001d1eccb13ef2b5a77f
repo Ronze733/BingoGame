@@ -1,0 +1,51 @@
+package game;
+
+public class Player {
+	private int score = 0;
+	private int bingo = 0;
+	private int select;
+	private int line;
+	private BingoBoard PBB = new BingoBoard(line);
+	private int[][] board = PBB.getBoard();
+	
+	public Player() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Player(int line) {
+		this.line = line;
+	}
+	
+	public void PrintBoard() {
+		PBB.PrintBoard();
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score += score;
+	}
+
+	public int getBingo() {
+		return bingo;
+	}
+
+	public void setBingo(int bingo) {
+		this.bingo += bingo;
+	}
+
+	public int getSelect() {
+		return select;
+	}
+
+	public void setSelect(int select) {
+		PBB.changeBoard(select);
+	}
+
+	
+	
+	
+	
+}

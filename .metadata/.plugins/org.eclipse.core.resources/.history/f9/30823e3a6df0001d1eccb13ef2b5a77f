@@ -1,0 +1,12 @@
+package game;
+
+public class Computer extends Player {
+	
+	private BingoBoard PBB;
+	
+	
+
+	public void setSelect(int select) {
+		PBB.changeBoard(select);
+	}
+}

@@ -1,0 +1,15 @@
+package game;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		BingoBoard test = new BingoBoard(5);
+		test.MakingBoard();
+		test.PrintBoard();
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		test.changeBoard(num);
+		test.PrintBoard();
+	}
+}

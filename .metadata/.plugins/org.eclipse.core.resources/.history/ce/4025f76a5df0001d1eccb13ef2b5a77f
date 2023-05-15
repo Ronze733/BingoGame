@@ -1,0 +1,19 @@
+package game;
+
+public class BingoBoard {
+	private int line;
+	private int[][] board = new int[line][line];
+	
+	public BingoBoard() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BingoBoard(int line) {
+		super();
+		this.line = line;
+	}
+	
+	public void MakingBoard() {
+		
+	}
+}

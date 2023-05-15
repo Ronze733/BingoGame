@@ -1,0 +1,16 @@
+package game;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	
+	public Game(int num, int line) {
+		if(num == 1) {
+			p1 = new Player(line);
+			p2 = new Computer(line);
+		} else if (num == 2) {
+			p1 = new Player(line);
+			p2 = new Player(line);
+		}
+	}
+}

@@ -1,0 +1,10 @@
+package game;
+
+public class Game {
+	private Player p1;
+	private Player p2;
+	
+	public Game() {
+		// TODO Auto-generated constructor stub
+	}
+}
