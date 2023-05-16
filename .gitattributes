@@ -1,5 +1,5 @@
-demo/** linguist-documentation=false
-demo/** linguist-vendored=false
+Bingo/** linguist-documentation=false
+Bingo/** linguist-vendored=false
 
 *.css linguist-detectable=false
 
